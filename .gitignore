@@ -1,0 +1,4 @@
+*.pem
+.ami
+.vagrant
+tmp

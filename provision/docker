@@ -1,0 +1,37 @@
+#!/bin/bash
+
+set -o errexit
+set -o nounset
+
+add_repository(){
+	sudo apt-key adv \
+		--keyserver hkp://p80.pool.sks-keyservers.net:80 \
+		--recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+
+	sudo sh -c "echo deb https://apt.dockerproject.org/repo ubuntu-wily main \
+		> /etc/apt/sources.list.d/docker.list"
+}
+
+install(){
+	sudo apt-get update --yes
+	sudo apt-get purge lxc-docker
+	sudo apt-cache policy docker-engine
+
+	sudo apt-get install --yes \
+		linux-image-extra-$(uname -r) \
+		apparmor \
+		docker-engine
+
+	sudo gpasswd -a ${USER} docker
+}
+
+setup_filesystem(){
+	sudo service docker stop
+	sudo rm -rf /var/lib/docker/devicemapper
+	sudo sed -i -e "/ExecStart/s/$/ --storage-driver=overlay/" /lib/systemd/system/docker.service
+	sudo systemctl daemon-reload
+}
+
+add_repository
+install
+setup_filesystem

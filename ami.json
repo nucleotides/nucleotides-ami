@@ -1,0 +1,40 @@
+{
+    "builders": [
+        {
+            "access_key": "{{user `aws_access_key`}}",
+            "ami_name": "{{user `image-name`}}",
+            "instance_type": "t2.micro",
+            "region": "us-west-1",
+            "secret_key": "{{user `aws_secret_key`}}",
+            "source_ami": "ami-ad671bcd",
+            "ssh_username": "ubuntu",
+            "type": "amazon-ebs"
+        }
+    ],
+    "provisioners": [
+        {
+            "inline": [
+                "sleep 10"
+            ],
+            "type": "shell"
+        },
+        {
+            "destination": "/tmp/nucleotides-client.tar.gz",
+            "source": "tmp/nucleotides-client.tar.gz",
+            "type": "file"
+        },
+        {
+            "scripts": [
+                "provision/docker",
+                "provision/misc",
+                "provision/nucleotides_client"
+            ],
+            "type": "shell"
+        }
+    ],
+    "variables": {
+        "aws_access_key": "",
+        "aws_secret_key": "",
+        "image-name": ""
+    }
+}
