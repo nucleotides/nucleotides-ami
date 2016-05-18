@@ -5,10 +5,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 0.1.0
 
+### Added
+
+  * Added set of AWS credentials to the ubuntu user
+
 ### Fixed
 
-  * Added correct location of nucleotides-client to `$PATH` environment
-    variable.
+  * Fixed location of nucleotides-client in the `$PATH` environment variable.
 
 ### Changed
 
