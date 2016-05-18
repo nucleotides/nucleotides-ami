@@ -48,3 +48,11 @@ tmp/s3cmd/s3cmd:
 	tar xzf - \
 		--directory $(dir $@) \
 		--strip-components=1
+
+tmp/credentials: tmp/s3cmd/s3cmd
+	@./tmp/s3cmd/s3cmd \
+		--access_key=$(call credential,access_key_id) \
+		--secret_key=$(call credential,secret) \
+		get s3://nucleotides-tools/credentials/ami-user-credentials \
+		$@
+	chmod 400 $@
