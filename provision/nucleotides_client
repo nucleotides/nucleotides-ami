@@ -6,5 +6,5 @@ set -o nounset
 sudo apt-get install --yes python-pip python-dev g++ libffi-dev libssl-dev
 
 pip install --user /tmp/nucleotides-client.tar.gz
-echo 'PATH=${PATH}:/root/.local/bin' >> ~/.bashrc
+echo 'PATH=${PATH}:${HOME}/.local/bin' >> /home/ubuntu/.bashrc
 rm /tmp/nucleotides-client.tar.gz
