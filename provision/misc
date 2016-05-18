@@ -4,6 +4,7 @@ set -o errexit
 set -o nounset
 
 sudo rm /etc/ssh/*
+chmod 400 /home/ubuntu/.aws/credentials
 
 sudo apt-get update -y
 sudo apt-get install -y parallel htop
