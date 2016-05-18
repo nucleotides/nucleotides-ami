@@ -7,4 +7,6 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 
-  * Switched to the ubuntu 16.04 LTS base image.
+  * Switched to the ubuntu 16.04 LTS base AMI.
+
+  * Removed all existing ssh keys from the created AMI.
