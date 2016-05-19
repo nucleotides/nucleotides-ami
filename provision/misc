@@ -3,7 +3,7 @@
 set -o errexit
 set -o nounset
 
-sudo rm /etc/ssh/*
+sudo shred -u /etc/ssh/*_key /etc/ssh/*_key.pub
 chmod 400 /home/ubuntu/.aws/credentials
 
 sudo apt-get update -y
