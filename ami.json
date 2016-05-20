@@ -24,11 +24,6 @@
             "type": "file"
         },
         {
-            "destination": "/home/ubuntu/.aws/credentials",
-            "source": "tmp/credentials",
-            "type": "file"
-        },
-        {
             "scripts": [
                 "provision/docker",
                 "provision/misc",
