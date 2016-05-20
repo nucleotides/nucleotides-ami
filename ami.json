@@ -30,6 +30,11 @@
                 "provision/nucleotides_client"
             ],
             "type": "shell"
+        },
+        {
+            "destination": "/home/ubuntu/.local/bin/start_benchmarks.sh",
+            "source": "start_benchmarks.sh",
+            "type": "file"
         }
     ],
     "variables": {
