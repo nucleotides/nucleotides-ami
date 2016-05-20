@@ -3,8 +3,7 @@
 set -o errexit
 set -o nounset
 
-sudo shred -u /etc/ssh/*_key /etc/ssh/*_key.pub
-chmod 400 /home/ubuntu/.aws/credentials
+sudo shred --remove /etc/ssh/*_key /etc/ssh/*_key.pub
 
-sudo apt-get update -y
-sudo apt-get install -y parallel htop
+sudo apt-get update --yes
+sudo apt-get install --yes parallel htop jq
