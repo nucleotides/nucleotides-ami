@@ -6,4 +6,4 @@ set -o nounset
 sudo shred --remove /etc/ssh/*_key /etc/ssh/*_key.pub
 
 sudo apt-get update --yes
-sudo apt-get install --yes parallel htop jq
+sudo apt-get install --yes parallel htop jq screen
