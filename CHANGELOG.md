@@ -7,7 +7,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
-  * Added set of AWS credentials to the ubuntu user
+  * Created benchmarking script which fetches API and S3 locations from the AMI
+    user data. The script uses these locations to start the benchmarking
+    process.
 
 ### Fixed
 
