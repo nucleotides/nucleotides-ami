@@ -8,3 +8,10 @@ dependencies:
 test:
   post:
     - ./script/build
+
+deployment:
+  deploy:
+    branch: master
+    owner: nucleotides
+    commands:
+      - ./script/publish
