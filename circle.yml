@@ -1,0 +1,6 @@
+dependencies:
+  pre:
+    - wget https://releases.hashicorp.com/packer/0.10.1/packer_0.10.1_linux_amd64.zip
+    - sudo unzip -d /usr/local/bin/ packer_0.10.1_linux_amd64.zip
+  post:
+    - ./script/bootstrap
