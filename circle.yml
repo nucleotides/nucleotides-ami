@@ -4,3 +4,7 @@ dependencies:
     - sudo unzip -d /usr/local/bin/ packer_0.10.1_linux_amd64.zip
   post:
     - ./script/bootstrap
+
+test:
+  post:
+    - ./script/build
