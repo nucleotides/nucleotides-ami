@@ -19,6 +19,11 @@
             "type": "shell"
         },
         {
+            "destination": "/home/ubuntu/.local/bin/start_benchmarks.sh",
+            "source": "start_benchmarks.sh",
+            "type": "file"
+        },
+        {
             "destination": "/tmp/nucleotides-client.tar.gz",
             "source": "tmp/nucleotides-client.tar.gz",
             "type": "file"
@@ -30,11 +35,6 @@
                 "provision/nucleotides_client"
             ],
             "type": "shell"
-        },
-        {
-            "destination": "/home/ubuntu/.local/bin/start_benchmarks.sh",
-            "source": "start_benchmarks.sh",
-            "type": "file"
         }
     ],
     "variables": {

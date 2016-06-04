@@ -3,6 +3,8 @@
 set -o errexit
 set -o nounset
 
+chmod 700 /home/ubuntu/.local/bin/start_benchmarks.sh
+
 sudo shred --remove /etc/ssh/*_key /etc/ssh/*_key.pub
 
 sudo apt-get update --yes
