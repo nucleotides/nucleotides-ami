@@ -3,10 +3,20 @@
 set -o errexit
 set -o nounset
 
-chmod 700 /home/ubuntu/.local/bin/start_benchmarks.sh
+setup_local_bin(){
+	DIR=/home/ubuntu/.local
+	sudo mkdir -p ${DIR}
+	sudo chown -R ubuntu ${DIR}
+	echo 'PATH=${PATH}:${HOME}/.local/bin' >> /home/ubuntu/.bashrc
+}
+
+setup_repositories(){
+	sudo apt-get update --yes
+	sudo apt-get upgrade --yes
+	sudo apt-get install --yes parallel htop jq screen
+}
+
+setup_repositories
+setup_local_bin
 
 sudo shred --remove /etc/ssh/*_key /etc/ssh/*_key.pub
-
-sudo apt-get update --yes
-sudo apt-get upgrade --yes
-sudo apt-get install --yes parallel htop jq screen
