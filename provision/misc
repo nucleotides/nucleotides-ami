@@ -3,5 +3,20 @@
 set -o errexit
 set -o nounset
 
-sudo apt-get update -y
-sudo apt-get install -y parallel htop
+setup_local_bin(){
+	DIR=/home/ubuntu/.local
+	sudo mkdir -p ${DIR}
+	sudo chown -R ubuntu ${DIR}
+	echo 'PATH=${PATH}:${HOME}/.local/bin' >> /home/ubuntu/.bashrc
+}
+
+setup_repositories(){
+	sudo apt-get update --yes
+	sudo apt-get upgrade --yes
+	sudo apt-get install --yes parallel htop jq screen
+}
+
+setup_repositories
+setup_local_bin
+
+sudo shred --remove /etc/ssh/*_key /etc/ssh/*_key.pub

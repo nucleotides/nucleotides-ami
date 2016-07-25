@@ -6,18 +6,12 @@
             "instance_type": "t2.micro",
             "region": "us-west-1",
             "secret_key": "{{user `aws_secret_key`}}",
-            "source_ami": "ami-ad671bcd",
+            "source_ami": "ami-e59bda85",
             "ssh_username": "ubuntu",
             "type": "amazon-ebs"
         }
     ],
     "provisioners": [
-        {
-            "inline": [
-                "sleep 10"
-            ],
-            "type": "shell"
-        },
         {
             "destination": "/tmp/nucleotides-client.tar.gz",
             "source": "tmp/nucleotides-client.tar.gz",
@@ -30,6 +24,11 @@
                 "provision/nucleotides_client"
             ],
             "type": "shell"
+        },
+        {
+            "destination": "/home/ubuntu/.local/bin/start_benchmarks.sh",
+            "source": "start_benchmarks.sh",
+            "type": "file"
         }
     ],
     "variables": {
