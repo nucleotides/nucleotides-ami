@@ -13,8 +13,8 @@
     ],
     "provisioners": [
         {
-            "destination": "/tmp/nucleotides-client.tar.gz",
-            "source": "tmp/nucleotides-client.tar.gz",
+            "destination": "/tmp/nucleotides-client.zip",
+            "source": "tmp/nucleotides-client.zip",
             "type": "file"
         },
         {

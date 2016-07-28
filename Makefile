@@ -30,14 +30,14 @@ build: .ami
 #
 ################################################
 
-bootstrap: tmp/nucleotides-client.tar.gz tmp/s3cmd/s3cmd
+bootstrap: tmp/nucleotides-client.zip tmp/s3cmd/s3cmd
 
-tmp/nucleotides-client.tar.gz:
+tmp/nucleotides-client.zip:
 	mkdir -p $(dir $@)
 	wget \
 		--quiet \
 		--output-document $@ \
-		https://s3-us-west-1.amazonaws.com/nucleotides-tools/client/0.x.y/nucleotides-client.tar.gz
+		https://s3-us-west-1.amazonaws.com/nucleotides-tools/client/0.x.y/nucleotides-client.zip
 
 tmp/s3cmd/s3cmd:
 	mkdir -p $(dir $@)
