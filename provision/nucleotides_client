@@ -5,5 +5,5 @@ set -o nounset
 
 sudo apt-get install --yes python-pip python-dev g++ libffi-dev libssl-dev
 
-pip install --user /tmp/nucleotides-client.tar.gz
-rm /tmp/nucleotides-client.tar.gz
+pip install --user /tmp/nucleotides-client.zip
+rm /tmp/nucleotides-client.zip
