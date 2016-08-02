@@ -29,6 +29,12 @@
             "destination": "/home/ubuntu/.local/bin/start_benchmarks.sh",
             "source": "start_benchmarks.sh",
             "type": "file"
+        },
+        {
+            "inline": [
+                "chmod 700 ${HOME}/.local/bin/start_benchmarks.sh"
+            ],
+            "type": "shell"
         }
     ],
     "variables": {
