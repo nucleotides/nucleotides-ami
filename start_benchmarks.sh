@@ -17,4 +17,6 @@ parallel \
         --env NUCLEOTIDES_API \
         --env NUCLEOTIDES_S3_URL \
         "nucleotides all {}" \
-        ::: ${TASKS}
+        :::: ${TASKS}
+
+sudo halt
