@@ -19,4 +19,8 @@ setup_repositories(){
 setup_repositories
 setup_local_bin
 
+# Destroy possibly sensitive keys
 sudo shred --remove /etc/ssh/*_key /etc/ssh/*_key.pub
+
+# Remove code preventing non-interactive bashrc evaluation
+sed -i 5,10d .bashrc
