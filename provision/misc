@@ -16,8 +16,14 @@ setup_repositories(){
 	sudo apt-get install --yes parallel htop jq screen
 }
 
+setup_ebs_storage(){
+	sudo mkdir -p /mnt
+	echo '/dev/xvdf       /mnt    ext4    defaults,nofail 0 2' | sudo tee --append /etc/fstab
+}
+
 setup_repositories
 setup_local_bin
+setup_ebs_storage
 
 # Destroy possibly sensitive keys
 sudo shred --remove /etc/ssh/*_key /etc/ssh/*_key.pub

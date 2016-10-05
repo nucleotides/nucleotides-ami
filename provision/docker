@@ -28,7 +28,7 @@ install(){
 setup_filesystem(){
 	sudo service docker stop
 	sudo rm -rf /var/lib/docker/devicemapper
-	sudo sed -i -e "/ExecStart/s/$/ --storage-driver=overlay/" /lib/systemd/system/docker.service
+	sudo sed -i -e "/ExecStart/s/$/ --storage-driver=overlay --graph=\/mnt\//" /lib/systemd/system/docker.service
 	sudo systemctl daemon-reload
 }
 
